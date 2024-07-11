@@ -35,6 +35,9 @@ func main() {
 
 	if err != nil {
         fmt.Fprintln(os.Stderr, err.Error())
+        // When used as an equalprg, don't remove malformed queries
+        fmt.Printf("# %s \n", err.Error())
+        fmt.Print(input.String())
 		os.Exit(-1)
 	}
 
